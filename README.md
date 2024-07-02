@@ -54,7 +54,7 @@ Prerequisites:
 
 ### Generate Project from Template 
 
-Copier will prompt you with a series of questions to customise the project according to your needs. Once you have answered all the questions, Yeoman JS will generate the project for you.
+Yeoman JS will prompt you with a series of questions to customise the project according to your needs. Once you have answered all the questions, Yeoman JS will generate the project for you.
 
 To initiate the project generation, run:
 >[!IMPORTANT]
