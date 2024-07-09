@@ -1,42 +1,40 @@
-"use strict";
 const Generator = require("yeoman-generator");
-const chalk = require("chalk");
-const yosay = require("yosay");
 
 module.exports = class extends Generator {
   prompting() {
-    // Have Yeoman greet the user.
-    this.log(
-      yosay(
-        `Welcome to the top-notch ${chalk.red(
-          "generator-ons-javascript-template"
-        )} generator!`
-      )
-    );
-
-    const prompts = [
+    return this.prompt([
       {
-        type: "confirm",
-        name: "someAnswer",
-        message: "Would you like to enable this option?",
-        default: true
+        type: "input",
+        name: "projectName",
+        message: "Your project name",
+        default: this.appname // Default to current folder name
+      },
+      {
+        type: "input",
+        name: "projectDescription",
+        message: "Your project description",
+        default: "A generic JavaScript/Node.js project"
+      },
+      {
+        type: "input",
+        name: "authorName",
+        message: "Author name",
+        default: "Your Name"
       }
-    ];
-
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
+    ]).then(answers => {
+      this.answers = answers;
     });
   }
 
   writing() {
-    this.fs.copy(
-      this.templatePath("dummyfile.txt"),
-      this.destinationPath("dummyfile.txt")
-    );
-  }
+    const templates = ["package.json", "index.js", "README.md", ".gitignore"];
 
-  install() {
-    this.installDependencies();
+    templates.forEach(file => {
+      this.fs.copyTpl(
+        this.templatePath(file),
+        this.destinationPath(file),
+        this.answers
+      );
+    });
   }
 };
