@@ -1,9 +1,7 @@
 # Code of conduct for `ONSdigital` repositories
 
-Contributors to repositories hosted in `ONSdigital` are expected to follow the [Contributor Covenant Code of
-Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html), and those working within Government are
-also expected to follow
-the [Civil Service Code](https://www.gov.uk/government/publications/civil-service-code/the-civil-service-code))
+Contributors to repositories hosted in `ONSdigital` are expected to follow the [Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct.html), and those working within Government are also expected to follow
+the [Civil Service Code](https://www.gov.uk/government/publications/civil-service-code/the-civil-service-code).
 
 ## Civil Service Code
 
