@@ -81,6 +81,6 @@ To initiate the project generation, run:
 
 ## Development
 
-##  Contributing
+## Contributing
 
-##  License
+## License
