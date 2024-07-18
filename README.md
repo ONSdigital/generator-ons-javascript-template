@@ -68,6 +68,44 @@ To initiate the project generation, run:
 >Sanjeev to add the tech part
 
 ## Post-Clone Steps
+There are a few steps to take after cloning your new repository to ensure it is fully configured and ready for use.
+
+#### 1. Private Internal Reasoning Record (PIRR)
+
+If your repository is private/internal, you should update the `PIRR.md` file in the root of your repository with the
+reasoning for the private/internal status of the repository.
+
+#### 2. Repository Settings
+
+Familiarise yourself with the [ONS GitHub Policy](https://github.com/ONSdigital/ons-template/wiki#github-policy) and
+ensure your repository is compliant with the policy.
+Few key points to note are:
+
+- **[Branch Protection](https://github.com/ONSdigital/ons-template/wiki/5.7-Branch-Protection-rules)**: Ensure
+  the `main` or any other primary branch is protected.
+- **[Signed Commits](https://github.com/ONSdigital/ons-template/wiki/5.8-Signed-Commits)**: Use GPG keys to sign your commits.
+- **[Security Alerts](https://github.com/ONSdigital/ons-template/wiki/6.2-Security)**: Make use of Secret scanning and Push protection. Dependabot alerts will be enabled by default when using this template.
+
+If you answered `Yes` to the `Do you want to set up the git repository?` question, then these settings would have been
+automatically configured for you. However, it is recommended to review these settings to ensure they meet your requirements.
+
+#### 3. MegaLinter
+
+##### Reducing the Docker image size for MegaLinter
+
+MegaLinter is set up to use the largest Docker image by default, containing all available linters and code analysis
+tools. This setup is designed for comprehensive coverage and serves as a solid starting point for new projects. However,
+you might not need every tool included in this image, as it can be quite large.
+
+To save space and optimise your setup, you can choose a more specific MegaLinter Docker image, called a [flavor](https://megalinter.io/latest/flavors/). Each flavor includes a subset of linters and tools suited for particular languages or frameworks.
+
+If you are unsure which flavor is best for you, try running MegaLinter with the default set up after your project has matured. After the run, MegaLinter will analyse the output and suggest a more suitable flavor if necessary. This helps you to customise your setup to include only the tools you need, reducing the Docker image size and improving efficiency.
+
+##### Auto-fixing linting issues via GitHub Actions
+
+If you would like to auto-fix issues using MegaLinter and commit the changes back to the PR, you will need to create
+a **Personal Access Token** and add it as a [secret to your repository](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+Without a **PAT** token, commits/PRs made by workflows do not trigger other workflows, including the MegaLinter workflow. This is a security feature of GitHub Actions to prevent infinite loops. For more info, see [MegaLinter: Auto-fixing issues](https://megalinter.io/latest/config-apply-fixes/#apply-fixes-issues).
 
 ## Updating Project with Template Changes
 
