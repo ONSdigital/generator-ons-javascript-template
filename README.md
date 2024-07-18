@@ -116,6 +116,15 @@ Without a **PAT** token, commits/PRs made by workflows do not trigger other work
 ## Alternative Software/ Tools
 
 ## Future Plans
+- Add more documentation and developer guidance.
+- Add support for pre-commit hooks.
+- Further customisation options for the template:
+    - Ability to choose your own Package Manager.
+    - Ability to choose your own Linting/Formatting tools.
+    - Ability to choose your own Type Checking tools.
+    - Ability to configure the GitHub repo setting post-generation via GitHub Template feature.
+- Integrate with the ONS Software Developer Portal.
+- Ability to update the project with the latest template changes.
 
 ## Development
 
