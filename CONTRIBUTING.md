@@ -4,13 +4,13 @@ Pull requests, bug reports, and all other forms of contribution are welcomed and
 
 ## Code of Conduct
 
-This project and all its participants are governed by our *[Code of Conduct](TO ADD)*. By taking part, you agree to adhere to this code.
+This project and all its participants are governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By taking part, you agree to adhere to this code.
 
 ## How Can I Contribute?
 
 ### Reporting Security Issues
 
-Review our *[Security Policy](TO ADD)* for details on reporting security vulnerabilities.
+Review our [Security Policy](SECURITY.md) for details on reporting security vulnerabilities.
 
 ### Reporting Bugs *(CHECK THIS AGAIN)*
 
@@ -33,4 +33,4 @@ We gladly welcome your pull requests. To ensure a smooth process, please follow 
 
 ## License
 
-By contributing to this project, you agree that your contributions will be covered by the *[Project's License](TO ADD)*.
+By contributing to this project, you agree that your contributions will be covered by the this project's [License](LICENSE).
