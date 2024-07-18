@@ -129,5 +129,7 @@ Without a **PAT** token, commits/PRs made by workflows do not trigger other work
 ## Development
 
 ## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
+See [LICENSE](LICENSE) for details.
