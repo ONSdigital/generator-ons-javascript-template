@@ -59,11 +59,34 @@ To get started:
 
 Prerequisites:
 >[!IMPORTANT]
->Sanjeev to add the tech part
+>To review again:
+>1. Node.js version 14.x or later: We recommend using nvm (Node Version Manager) to manage Node.js versions.
+>2. npm (Node package manager, which comes with Node.js): Ensure npm is installed and updated
+```bash
 
-1. Operating System: Ubuntu/MacOS.
-2. Git: Ensure Git is installed and configured.
-3. GitHub CLI (OPTIONAL): If you want to automate repository creation and configuration, including branch protection, ensure the GitHub CLI is installed and you are authenticated.
+# Update npm to the latest version
+npm install -g npm
+# Verify installation
+npm -v
+```
+>3. Yeoman: Install Yeoman globally using npm:
+```bash
+
+npm install -g yo
+
+# Verify installation
+yo --version
+```
+>4. Generator: Install the specific Yeoman generator for your project.
+```bash
+npm install -g generator-name # Replace generator-name with the actual generator you intend to use
+
+# Verify installation
+yo generator-name --help
+```
+>5. Operating System: Ubuntu/MacOS.
+>6. Git: Ensure Git is installed and configured.
+>7. GitHub CLI (OPTIONAL): If you want to automate repository creation and configuration, including branch protection, ensure the GitHub CLI is installed and you are authenticated.
 
 ## Generate Project from Template
 
