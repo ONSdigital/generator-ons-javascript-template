@@ -77,7 +77,7 @@ npm install -g yo
 # Verify installation
 yo --version
 ```
->4. Generator: Install the specific Yeoman generator for your project.
+>4. Yeoman Generator: Install the specific Yeoman generator for your project. Yeoman requires a generator to scaffold a new project. Each generator is tailored for different frameworks, libraries, or project types.
 ```bash
 npm install -g generator-name # Replace generator-name with the actual generator you intend to use
 
