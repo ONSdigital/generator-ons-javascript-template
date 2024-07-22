@@ -28,7 +28,8 @@ For an example built using this template, see this [demo repository]().
 This template includes a number of features to help you get started developing your JavaScript project quickly:
 
 >[!IMPORTANT]
->Sanjeev to add the tech part
+>To review again:
+>ESLint (linting tool) to analyse code to find and fix problems. This includes identifying syntax errors, potential bugs, stylistic errors, and deviation from coding standards.
 
 ## Getting Started
 
