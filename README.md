@@ -92,7 +92,6 @@ yo generator-name --help
 
 Once all prerequisites are installed, you can generate your project using Yeoman. Follow these steps:
 
-To initiate the project generation, run:
 >[!IMPORTANT]
 >To review again:
 >1. **Run Yeoman**:
