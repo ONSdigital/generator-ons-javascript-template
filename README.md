@@ -133,10 +133,7 @@ have been automatically done for you.**
    git push -u origin main
    ```
 
-Now you can start working on your project. :rocket:
-
-To update your project when the template changes,
-see [Updating Project with Template Changes][updating-project].
+Now you can start working on your project.
 
 ## Post-Clone Steps
 There are a few steps to take after cloning your new repository to ensure it is fully configured and ready for use.
