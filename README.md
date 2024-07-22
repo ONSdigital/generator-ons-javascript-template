@@ -42,6 +42,9 @@ You have two options for generating a project from this template:
 
 ## Using GitHub Template Feature
 
+>[!NOTE]
+>DO NOT FORK this repository. Instead use the [Use this template](https://github.com/new?template_name=ons-javascript-template&template_owner=ONSdigital) feature.
+
 To get started:
 
 1. Click on [Use this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
