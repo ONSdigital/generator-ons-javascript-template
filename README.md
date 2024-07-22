@@ -57,11 +57,11 @@ To get started:
 
 ##  Running Yeoman Locally
 
-Prerequisites:
+#### Prerequisites:
 >[!IMPORTANT]
 >To review again:
->1. Node.js version 14.x or later: We recommend using nvm (Node Version Manager) to manage Node.js versions.
->2. npm (Node package manager, which comes with Node.js): Ensure npm is installed and updated
+>1. **Node.js version 14.x or later**: We recommend using nvm (Node Version Manager) to manage Node.js versions.
+>2. **npm** (Node package manager, which comes with Node.js): Ensure npm is installed and updated
 ```bash
 
 # Update npm to the latest version
@@ -69,7 +69,7 @@ npm install -g npm
 # Verify installation
 npm -v
 ```
->3. Yeoman: Install Yeoman globally using npm:
+>3. **Yeoman**: Install Yeoman globally using npm:
 ```bash
 
 npm install -g yo
@@ -77,24 +77,67 @@ npm install -g yo
 # Verify installation
 yo --version
 ```
->4. Yeoman Generator: Install the specific Yeoman generator for your project. Yeoman requires a generator to scaffold a new project. Each generator is tailored for different frameworks, libraries, or project types.
+>4. **Yeoman Generator**: Install the specific Yeoman generator for your project. Yeoman requires a generator to scaffold a new project. Each generator is tailored for different frameworks, libraries, or project types.
 ```bash
 npm install -g generator-name # Replace generator-name with the actual generator you intend to use
 
 # Verify installation
 yo generator-name --help
 ```
->5. Operating System: Ubuntu/MacOS.
->6. Git: Ensure Git is installed and configured.
->7. GitHub CLI (OPTIONAL): If you want to automate repository creation and configuration, including branch protection, ensure the GitHub CLI is installed and you are authenticated.
+>5. **Operating System**: Ubuntu/MacOS.
+>6. **Git**: Ensure Git is installed and configured.
+>7. **GitHub CLI** (OPTIONAL): If you want to automate repository creation and configuration, including branch protection, ensure the GitHub CLI is installed and you are authenticated.
 
 ## Generate Project from Template
 
-Yeoman will prompt you with a series of questions to customise the project according to your needs. Once you have answered all the questions, Yeoman will generate the project for you.
+Once all prerequisites are installed, you can generate your project using Yeoman. Follow these steps:
 
 To initiate the project generation, run:
 >[!IMPORTANT]
->Sanjeev to add the tech part
+>To review again:
+>1. **Run Yeoman**:
+```bash
+yo generator-name
+```
+>2. **Answer the Prompts**: Yeoman will prompt you with a series of questions to customise the project template according to your needs. Answer these questions to tailor the project to your specifications.
+>3. **Complete the Generation**: After answering all the questions, Yeoman will generate the project for you.
+>4. **Navigate to your Project Directory**:
+```bash
+cd your-project-directory
+```
+>5. **Start Working on your Project**: You can now start working on your newly generated JavaScript project.
+
+>By following these steps, you will set up a new JavaScript project using Yeoman locally, ensuring you have a consistent and efficient starting point for your development work.
+
+#### Initialising a Git Repository and Pushing to GitHub
+
+**This step is only required if you answered `No` to the `Do you want to set up the git repository?` question.
+Otherwise, this would
+have been automatically done for you.**
+
+1. Go to your project directory, and initialise a git repository and make the initial commit
+
+   ```bash
+   cd /path/to/your/new/project
+   git init -b main
+   git add .
+   git commit -m "Initial commit"
+   ```
+
+2. Create a new repo in GitHub.
+   See [GitHub How-to](<https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories>]
+
+3. Push your project to the repository on GitHub:
+
+   ```bash
+   git remote add origin https://github.com/<repository_owner>/<repository_name>.git
+   git push -u origin main
+   ```
+
+Now you can start working on your project. :rocket:
+
+To update your project when the template changes,
+see [Updating Project with Template Changes][updating-project].
 
 ## Post-Clone Steps
 There are a few steps to take after cloning your new repository to ensure it is fully configured and ready for use.
