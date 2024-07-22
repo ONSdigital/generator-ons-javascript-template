@@ -25,7 +25,7 @@ For an example built using this template, see this [demo repository]().
 
 ## Features
 
-==Test== This template includes a number of features to help you get started developing your JavaScript project quickly:
+This template includes a number of features to help you get started developing your JavaScript project quickly:
 
 >[!IMPORTANT]
 >Sanjeev to add the tech part
