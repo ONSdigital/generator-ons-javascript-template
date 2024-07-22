@@ -29,7 +29,9 @@ This template includes a number of features to help you get started developing y
 
 >[!IMPORTANT]
 >To review again:
->ESLint (linting tool) to analyse code to find and fix problems. This includes identifying syntax errors, potential bugs, stylistic errors, and deviation from coding standards.
+>- [ESLint](https://eslint.org/) (linting tool) to analyse code to find and fix problems. This includes identifying syntax errors, potential bugs, stylistic errors, and deviation from coding standards.
+>- [Prettier](https://prettier.io/docs/en/index.html) (code formatting tool) to format your code to ensure it adheres to a consistent style.
+>- Continuous Integration using [GitHub Actions](https://docs.github.com/en/actions) with jobs to lint and test your project.
 
 ## Getting Started
 
