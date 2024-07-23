@@ -12,9 +12,9 @@ For an example built using this template, see this [demo repository]().
 
 - [Features](#features)
 - [Getting Started](#getting-started)
-  - Using GitHub Template Feature(#using-github-template-feature)
-  - Using Yeoman Locally(#using-yeoman-locally)
-  - Post-clone Steps(#post-clone-steps)
+  - [Using GitHub Template Feature](using-github-template-feature)
+  - [Using Yeoman Locally](#using-yeoman-locally)
+  - [Post-clone Steps](#post-clone-steps)
 - [Updating Project with Template Changes](#updating-project-with-template-changes)
 - [Structure](#structure)
 - [Design Decisions](#design-decisions)
