@@ -168,8 +168,19 @@ Without a **PAT** token, commits/PRs made by workflows do not trigger other work
 ## Structure
 
 ## Design Decisions
+This JavaScript template is designed with specific tools and practices to streamline your development workflow. While this template is opinionated, there are many alternatives to the tools used here which you may prefer. See the [Alternative Software/Tools](#alternative-softwaretools) section for more information.
+>[!IMPORTANT]
+>To review again:
+>#### 1. Why use npm?
+>npm (Node Package Manager) is the default package manager for Node.js. It simplifies dependency management and allows you to easily install, update, and manage libraries required for your project. It also provides a vast registry of packages that can be readily integrated into your project.
+>#### 2. Why use Yeoman?
+>Yeoman is a scaffolding tool that helps kickstart new projects by providing generators for various frameworks and libraries. It allows you to quickly set up a new project with a consistent structure and best practices in place, saving time and reducing errors during the initial setup phase.
+>#### 3. Why use ESLint?
+>ESLint is a static code analysis tool that helps you find and fix problems in your JavaScript code. It enforces coding standards and best practices, improving code quality and maintainability. ESLint can be customised with various rules and plugins to suit your project's specifc needs.
+>#### 4. Why use Prettier?
+>Prettier is an opinionated code formatter that ensures your codebase remains consistently formatted. It saves time by automating the formatting process and reduces debates about code style during code reviews. Prettier integrates seamlessly with ESLint to provide a comprehensive linting and formatting solution.
 
-## Alternative Software/ Tools
+## Alternative Software/Tools
 
 ## Future Plans
 - Add more documentation and developer guidance.
