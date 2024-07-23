@@ -179,6 +179,8 @@ This JavaScript template is designed with specific tools and practices to stream
 >ESLint is a static code analysis tool that helps you find and fix problems in your JavaScript code. It enforces coding standards and best practices, improving code quality and maintainability. ESLint can be customised with various rules and plugins to suit your project's specifc needs.
 >#### 4. Why use Prettier?
 >Prettier is an opinionated code formatter that ensures your codebase remains consistently formatted. It saves time by automating the formatting process and reduces debates about code style during code reviews. Prettier integrates seamlessly with ESLint to provide a comprehensive linting and formatting solution.
+>#### 5. Why use Jest?
+>Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It provides a robust testing suite with a great developer experience, including features like snapshot testing, parallel test execution, and easy-to-understand error messages. Jest's zero-configuration setup makes it easy to start testing quickly.
 
 ## Alternative Software/Tools
 
