@@ -157,18 +157,6 @@ Few key points to note are:
 If you answered `Yes` to the `Do you want to set up the git repository?` question, then these settings would have been
 automatically configured for you. However, it is recommended to review these settings to ensure they meet your requirements.
 
-#### 3. MegaLinter
-
-##### Reducing the Docker image size for MegaLinter
-
-MegaLinter is set up to use the largest Docker image by default, containing all available linters and code analysis
-tools. This setup is designed for comprehensive coverage and serves as a solid starting point for new projects. However,
-you might not need every tool included in this image, as it can be quite large.
-
-To save space and optimise your setup, you can choose a more specific MegaLinter Docker image, called a [flavor](https://megalinter.io/latest/flavors/). Each flavor includes a subset of linters and tools suited for particular languages or frameworks.
-
-If you are unsure which flavor is best for you, try running MegaLinter with the default set up after your project has matured. After the run, MegaLinter will analyse the output and suggest a more suitable flavor if necessary. This helps you to customise your setup to include only the tools you need, reducing the Docker image size and improving efficiency.
-
 ##### Auto-fixing linting issues via GitHub Actions
 
 If you would like to auto-fix issues using MegaLinter and commit the changes back to the PR, you will need to create
