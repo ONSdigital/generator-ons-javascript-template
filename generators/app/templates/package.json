@@ -1,5 +1,5 @@
 {
-  "name": "ONS-JavaScript-Template-Repo",
+  "name": "ons-javascript-template-repo",
   "version": "1.0.0",
   "description": "ONS JavaScript Template Repo Generator",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "prettier": "prettier --write .",
     "test": "jest"
   },
-  "author": "Sanjeev & Gaia",
+  "author": "Sanjeev, Gaia & Sophie",
   "license": "ISC",
   "devDependencies": {
     "@eslint/js": "^9.7.0",
