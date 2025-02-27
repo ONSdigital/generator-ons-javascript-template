@@ -5,7 +5,11 @@ const chalk = require('chalk');
 
 module.exports = class extends Generator {
   async prompting() {
-    this.log(chalk.blue('\nWelcome to the ONS JavaScript/TypeScript Template Generator!\n'));
+    this.log(
+      chalk.blue(
+        '\nWelcome to the ONS JavaScript/TypeScript Template Generator!\n',
+      ),
+    );
 
     // Collect user input
     this.answers = await this.prompt([
@@ -13,7 +17,7 @@ module.exports = class extends Generator {
         type: 'input',
         name: 'projectName',
         message: 'Project name:',
-        default: 'my-new-project'
+        default: 'my-new-project',
       },
       {
         type: 'list',
@@ -21,93 +25,141 @@ module.exports = class extends Generator {
         message: 'Which language do you want to use?',
         choices: [
           { name: 'JavaScript', value: 'js' },
-          { name: 'TypeScript', value: 'ts' }
+          { name: 'TypeScript', value: 'ts' },
         ],
-        default: 'js'
+        default: 'js',
+      },
+      {
+        type: 'checkbox', // <-- Allows multiple selections
+        name: 'lintTools',
+        message:
+          'Which lint/format tools do you want to include? (Space to select)',
+        choices: [
+          { name: 'ESLint', value: 'eslint' },
+          { name: 'Prettier', value: 'prettier' },
+        ],
+      },
+      {
+        type: 'list',
+        name: 'packageManager',
+        message: 'Which package manager do you want to use?',
+        choices: [
+          { name: 'npm', value: 'npm' },
+          { name: 'Yarn', value: 'yarn' },
+        ],
+        default: 'npm',
       },
       {
         type: 'confirm',
         name: 'githubActions',
         message: 'Include GitHub Actions CI/CD configuration?',
-        default: true
+        default: true,
       },
       {
         type: 'confirm',
         name: 'codeQL',
         message: 'Include GitHub CodeQL Scanning (public repos)?',
-        default: true
+        default: true,
       },
       {
         type: 'confirm',
         name: 'dependabot',
         message: 'Include Dependabot config?',
-        default: true
-      }
+        default: true,
+      },
+      {
+        type: 'list',
+        name: 'repoVisibility',
+        message: 'Is this repository private, internal, or public?',
+        choices: [
+          { name: 'Private', value: 'private' },
+          { name: 'Internal', value: 'internal' },
+          { name: 'Public', value: 'public' },
+        ],
+        default: 'private',
+      },
     ]);
   }
 
   writing() {
-    const { projectName, language, githubActions, codeQL, dependabot } = this.answers;
+    const {
+      projectName,
+      language,
+      githubActions,
+      codeQL,
+      dependabot,
+      packageManager,
+      repoVisibility,
+      lintTools,
+    } = this.answers;
 
     // Create a destination path for the new project
     const dest = this.destinationPath(projectName);
 
     // Copy universal markdown/docs (CODE_OF_CONDUCT, CONTRIBUTING, LICENSE, SECURITY, README, etc.)
     // Adjust these if you want to prompt whether to include them.
-    
+
     // Copy .editorconfig
     this.fs.copy(
       this.templatePath('.editorconfig'),
-      this.destinationPath(`${projectName}/.editorconfig`)
+      this.destinationPath(`${projectName}/.editorconfig`),
     );
-    
+
     this.fs.copy(
       this.templatePath('CODE_OF_CONDUCT.md'),
-      this.destinationPath(`${projectName}/CODE_OF_CONDUCT.md`)
+      this.destinationPath(`${projectName}/CODE_OF_CONDUCT.md`),
     );
 
     this.fs.copy(
       this.templatePath('CONTRIBUTING.md'),
-      this.destinationPath(`${projectName}/CONTRIBUTING.md`)
+      this.destinationPath(`${projectName}/CONTRIBUTING.md`),
     );
 
     this.fs.copy(
       this.templatePath('LICENSE'),
-      this.destinationPath(`${projectName}/LICENSE`)
+      this.destinationPath(`${projectName}/LICENSE`),
     );
 
     this.fs.copy(
       this.templatePath('SECURITY.md'),
-      this.destinationPath(`${projectName}/SECURITY.md`)
+      this.destinationPath(`${projectName}/SECURITY.md`),
     );
 
-    // Optionally rename PIRR.md -> PULL_REQUEST_TEMPLATE.md or some other usage
-    this.fs.copy(
-      this.templatePath('PIRR.md'),
-      this.destinationPath(`${projectName}/PIRR.md`)
-    );
+    // Only copy PIRR.md if the repo is not public
+    if (repoVisibility !== 'public') {
+      this.fs.copy(
+        this.templatePath('PIRR.md'),
+        this.destinationPath(`${projectName}/PIRR.md`),
+      );
+    }
 
     this.fs.copy(
       this.templatePath('README.md'),
-      this.destinationPath(`${projectName}/README.md`)
+      this.destinationPath(`${projectName}/README.md`),
     );
 
-    // Copy ESlint config
-    this.fs.copy(
-      this.templatePath('eslint.config.mjs'),
-      this.destinationPath(`${projectName}/eslint.config.mjs`)
-    );
+    // Conditionally copy ESLint config
+    if (lintTools.includes('eslint')) {
+      this.fs.copy(
+        this.templatePath('eslint.config.mjs'),
+        this.destinationPath(`${projectName}/eslint.config.mjs`),
+      );
+      // If you have an .eslintrc or similar, copy it here as well
+      // e.g. this.fs.copy(this.templatePath('.eslintrc.js'), `${projectName}/.eslintrc.js`);
+    }
+
+    // Conditionally copy Prettier config
+    if (lintTools.includes('prettier')) {
+      this.fs.copy(
+        this.templatePath('_.prettierrc'),
+        this.destinationPath(`${projectName}/.prettierrc`),
+      );
+    }
 
     // Copy .gitignore (with underscore to avoid ignoring itself)
     this.fs.copy(
       this.templatePath('_.gitignore'),
-      this.destinationPath(`${projectName}/.gitignore`)
-    );
-
-    // Copy Prettier config
-    this.fs.copy(
-      this.templatePath('_.prettierrc'),
-      this.destinationPath(`${projectName}/.prettierrc`)
+      this.destinationPath(`${projectName}/.gitignore`),
     );
 
     // Copy (or template) package.json
@@ -115,25 +167,25 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('_package.json'),
       this.destinationPath(`${projectName}/package.json`),
-      { projectName, language }
+      { projectName, language },
     );
 
     // If you have a lockfile template:
     this.fs.copy(
       this.templatePath('package-lock.json'),
-      this.destinationPath(`${projectName}/package-lock.json`)
+      this.destinationPath(`${projectName}/package-lock.json`),
     );
 
     // Copy GitHub Actions workflows if selected
     if (githubActions) {
       this.fs.copy(
         this.templatePath('.github/workflows/ci.yml'),
-        this.destinationPath(`${projectName}/.github/workflows/ci.yml`)
+        this.destinationPath(`${projectName}/.github/workflows/ci.yml`),
       );
       if (codeQL) {
         this.fs.copy(
           this.templatePath('.github/workflows/codeql.yml'),
-          this.destinationPath(`${projectName}/.github/workflows/codeql.yml`)
+          this.destinationPath(`${projectName}/.github/workflows/codeql.yml`),
         );
       }
     }
@@ -142,7 +194,7 @@ module.exports = class extends Generator {
     if (dependabot) {
       this.fs.copy(
         this.templatePath('.github/dependabot.yml'),
-        this.destinationPath(`${projectName}/.github/dependabot.yml`)
+        this.destinationPath(`${projectName}/.github/dependabot.yml`),
       );
     }
 
@@ -151,50 +203,54 @@ module.exports = class extends Generator {
       // Create a src directory in the destination and copy TypeScript index
       this.fs.copy(
         this.templatePath('ts/index.ts'),
-        this.destinationPath(`${projectName}/src/index.ts`)
+        this.destinationPath(`${projectName}/src/index.ts`),
       );
 
       // Copy test folder (with your TS tests inside)
       this.fs.copy(
         this.templatePath('ts/test'),
-        this.destinationPath(`${projectName}/test`)
+        this.destinationPath(`${projectName}/test`),
       );
 
       // Copy tsconfig.json
       this.fs.copy(
         this.templatePath('ts/tsconfig.json'),
-        this.destinationPath(`${projectName}/tsconfig.json`)
+        this.destinationPath(`${projectName}/tsconfig.json`),
       );
     } else {
       // JavaScript
       this.fs.copy(
         this.templatePath('js/index.js'),
-        this.destinationPath(`${projectName}/src/index.js`)
+        this.destinationPath(`${projectName}/src/index.js`),
       );
 
       // Copy JS test folder
       this.fs.copy(
         this.templatePath('js/test'),
-        this.destinationPath(`${projectName}/test`)
+        this.destinationPath(`${projectName}/test`),
       );
     }
   }
 
   install() {
-    // Change into the new project folder
+    // Move into the new project folder
     process.chdir(this.destinationPath(this.answers.projectName));
-  
-    // Use spawnCommandSync (blocking) or spawnCommand (non-blocking) to run npm install
-    this.spawnCommandSync('npm', ['install']);
-  
-    // Alternatively, if you prefer asynchronous spawn:
-    // return this.spawnCommand('npm', ['install']);
+
+    // Run either npm install or yarn
+    if (this.answers.packageManager === 'yarn') {
+      this.spawnCommandSync('yarn', []);
+    } else {
+      this.spawnCommandSync('npm', ['install']);
+    }
   }
-  
 
   end() {
     this.log(chalk.green('\nYour new project is ready!'));
     this.log(`\n  1) cd ${this.answers.projectName}`);
-    this.log('  2) npm run build / test / lint, etc.\n');
+    if (this.answers.packageManager === 'yarn') {
+      this.log('  2) yarn run build / test / lint, etc.\n');
+    } else {
+      this.log('  2) npm run build / test / lint, etc.\n');
+    }
   }
 };
