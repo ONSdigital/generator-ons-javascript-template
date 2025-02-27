@@ -1,5 +1,5 @@
 {
-  "name": "generator-node-template",
+  "name": "generator-ons-javascript-template",
   "version": "1.0.0",
   "description": "A generic JavaScript/Node.js template generator",
   "main": "generators/app/index.js",
@@ -12,7 +12,10 @@
   "author": "Sanjeev & Gaia",
   "license": "ISC",
   "dependencies": {
-    "yeoman-generator": "^5.0.1",
-    "glob": "^8.0.3"
+    "eslint": "^9.21.0",
+    "glob": "^8.0.3",
+    "prettier": "^3.5.2",
+    "yeoman-generator": "^5.10.0",
+    "yo": "^5.1.0"
   }
 }
