@@ -115,8 +115,7 @@ cd your-project-directory
 #### Initialising a Git Repository and Pushing to GitHub
 
 **This step is only required if you answered `No` to the `Do you want to set up the git repository?` question.
-Otherwise, this would
-have been automatically done for you.**
+Otherwise, this would have been automatically done for you.**
 
 1. Go to your project directory, and initialise a git repository and make the initial commit
 
@@ -144,13 +143,11 @@ There are a few steps to take after cloning your new repository to ensure it is 
 
 #### 1. Private Internal Reasoning Record (PIRR)
 
-If your repository is private/internal, you should update the `PIRR.md` file in the root of your repository with the
-reasoning for the private/internal status of the repository.
+If your repository is private/internal, you should update the `PIRR.md` file in the root of your repository with the reasoning for the private/internal status of the repository.
 
 #### 2. Repository Settings
 
-Familiarise yourself with the [ONS GitHub Policy](https://github.com/ONSdigital/ons-template/wiki#github-policy) and
-ensure your repository is compliant with the policy.
+Familiarise yourself with the [ONS GitHub Policy](https://github.com/ONSdigital/ons-template/wiki#github-policy) and ensure your repository is compliant with the policy.
 Few key points to note are:
 
 - **[Branch Protection](https://github.com/ONSdigital/ons-template/wiki/5.7-Branch-Protection-rules)**: Ensure
@@ -158,13 +155,11 @@ Few key points to note are:
 - **[Signed Commits](https://github.com/ONSdigital/ons-template/wiki/5.8-Signed-Commits)**: Use GPG keys to sign your commits.
 - **[Security Alerts](https://github.com/ONSdigital/ons-template/wiki/6.2-Security)**: Make use of Secret scanning and Push protection. Dependabot alerts will be enabled by default when using this template.
 
-If you answered `Yes` to the `Do you want to set up the git repository?` question, then these settings would have been
-automatically configured for you. However, it is recommended to review these settings to ensure they meet your requirements.
+If you answered `Yes` to the `Do you want to set up the git repository?` question, then these settings would have been automatically configured for you. However, it is recommended to review these settings to ensure they meet your requirements.
 
 ##### Auto-fixing linting issues via GitHub Actions
 
-If you would like to auto-fix issues using MegaLinter and commit the changes back to the PR, you will need to create
-a **Personal Access Token** and add it as a [secret to your repository](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
+If you would like to auto-fix issues using MegaLinter and commit the changes back to the PR, you will need to create a **Personal Access Token** and add it as a [secret to your repository](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
 Without a **PAT** token, commits/PRs made by workflows do not trigger other workflows, including the MegaLinter workflow. This is a security feature of GitHub Actions to prevent infinite loops. For more info, see [MegaLinter: Auto-fixing issues](https://megalinter.io/latest/config-apply-fixes/#apply-fixes-issues).
 
 ## Updating Project with Template Changes
