@@ -194,7 +194,41 @@ Start by reviewing the template's changelog or commit history to understand the 
 7. **Test Thoroughly:**
     After applying the updates, run your project's tests and ensure that everything is working as expected.
 
-## Structure
+## Structure 
+The structure of the template repo is as follows:
+
+**STILL DRAFT VERSION**
+
+<!-- markdownlint-disable MD013 -->
+
+```plaintext
+├── __tests__                         # Contains test files.
+│   └── app.js                        # Test file for the generated application.
+├── generators/app                    # Yeoman generator logic.
+│   ├── templates                     # Contains templates files.
+│   │   ├── .github                   # Contains GitHub-specific configurations, including Actions workflows for CI/CD processes.
+│   │   │   └── TBA
+│   │   ├── js/                       # JavaScript project template.
+│   │   │   └── TBA
+│   │   ├── ts/                       # TypeScript project template.
+│   └── index.js                      # Entry point for the generator.
+├── .editorconfig                     # Configuration file for maintaining consistent coding styles for multiple developers working on the same project across various editors and IDEs.
+├── .eslintignore
+├── .gitattributes                    # Git attributes file for defining attributes per path, such as line endings and merge strategies.
+├── .gitignore                        # Specifies intentionally untracked files to ignore when using Git, like build outputs and temporary files.
+├── .nvmrc                            #
+├── .prettierrc                       # 
+├── .travis.yml
+├── CODE_OF_CONDUCT.md                # A code of conduct for the project, outlining the standards of behaviour for contributors.
+├── CONTRIBUTING.md                   # Guidelines for contributing to the project, including information on how to raise issues and submit pull requests.
+├── LICENSE                           # The license under which the project is made available.
+├── README.md                         # The main README file providing an overview of the project, setup instructions, and other essential information.
+├── SECURITY.md                       # A security policy for the project, providing information on how to report security vulnerabilities.
+├── package-lock.json
+└──package.json
+```
+
+<!-- markdownlint-enable MD013 -->
 
 ## Design Decisions
 This JavaScript template is designed with specific tools and practices to streamline your development workflow. While this template is opinionated, there are many alternatives to the tools used here which you may prefer. See the [Alternative Software/Tools](#alternative-softwaretools) section for more information.
