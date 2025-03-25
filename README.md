@@ -157,6 +157,42 @@ If you would like to auto-fix issues using MegaLinter and commit the changes bac
 Without a **PAT** token, commits/PRs made by workflows do not trigger other workflows, including the MegaLinter workflow. This is a security feature of GitHub Actions to prevent infinite loops. For more info, see [MegaLinter: Auto-fixing issues](https://megalinter.io/latest/config-apply-fixes/#apply-fixes-issues).
 
 ## Updating Project with Template Changes
+This template is actively maintained to incorporate the latest best practices, tooling, and configurations. As such, you may want to update your project with changes made to the template since you initially generated it.
+
+**Note:** Unlike tools like Copier, Yeoman does not have a built-in update mechanism to apply changes from a generator to an existing project. Therefore, the following steps involve a more manual process.
+
+**Recommended Update Procedure**
+1. **Review Template Changes:**
+* Start by reviewing the template's changelog or commit history to understand the changes made since you generated your project. Pay close attention to:
+  - Updated dependencies (e.g., in `package.json`).
+  - Configuration file modifications (e.g., `.eslintrc.json`,`.prettierrc.json`,`.editorconfig`).
+  - Changes to GitHub Actions workflows (`.github/workflows/`).
+  - New or modified scripts in `package.json`.
+  - New files or folder structure changes.
+
+2. **Backup Your Project (Optional but Recommended):**
+* Before making any changes, create a backup of your project to prevent data loss.
+
+3. **Update Dependencies:**
+* If the template has updated dependencies, manually update your `package.json` file.
+
+* Run `npm install` or `npm ci` to install the updated dependencies.
+
+4. **Merge Configuration Changes:**
+* Carefully merge any changes to configuration files. Use `git diff` or a tool like [diffmerge](https://www.sourcegear.com/diffmerge/) to see what has changed.
+
+* If you have heavily modified configuration files, you might have to manually apply the relevant changes.
+
+5. **Update GitHub Actions Workflows:**
+* Copy and paste changes from the template's `.github/workflows/` directory into your project's workflows, being very careful to not overwrite any changes that you have made.
+
+6. **Address Structural Changes:**
+* If the template has introduced new files or folders, create them in your project.
+
+* If files have been moved or renamed, make the corresponding changes in your project.
+
+7. **Test Thoroughly:**
+* After applying the updates, run your project's tests and ensure that everything is working as expected.
 
 ## Structure
 
