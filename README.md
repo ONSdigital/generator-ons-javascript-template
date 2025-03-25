@@ -121,7 +121,7 @@ Otherwise, this would have been automatically done for you.**
    ```
 
 2. Create a new repo in GitHub.
-   See [GitHub How-to](<https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories>]
+   See [GitHub How-to](<https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories>)
 
 3. Push your project to the repository on GitHub:
 
