@@ -171,28 +171,28 @@ Start by reviewing the template's changelog or commit history to understand the 
   - New files or folder structure changes.
 
 2. **Backup Your Project (Optional but Recommended):**
-Before making any changes, create a backup of your project to prevent data loss.
+    Before making any changes, create a backup of your project to prevent data loss.
 
 3. **Update Dependencies:**
-If the template has updated dependencies, manually update your `package.json` file.
+    If the template has updated dependencies, manually update your `package.json` file.
 
-Run `npm install` or `npm ci` to install the updated dependencies.
+    Run `npm install` or `npm ci` to install the updated dependencies.
 
 4. **Merge Configuration Changes:**
-Carefully merge any changes to configuration files. Use `git diff` or a tool like [diffmerge](https://www.sourcegear.com/diffmerge/) to see what has changed.
+    Carefully merge any changes to configuration files. Use `git diff` or a tool like [diffmerge](https://www.sourcegear.com/diffmerge/) to see what has changed.
 
-If you have heavily modified configuration files, you might have to manually apply the relevant changes.
+    If you have heavily modified configuration files, you might have to manually apply the relevant changes.
 
 5. **Update GitHub Actions Workflows:**
-Copy and paste changes from the template's `.github/workflows/` directory into your project's workflows, being very careful to not overwrite any changes that you have made.
+    Copy and paste changes from the template's `.github/workflows/` directory into your project's workflows, being very careful to not overwrite any changes that you have made.
 
 6. **Address Structural Changes:**
-If the template has introduced new files or folders, create them in your project.
+    If the template has introduced new files or folders, create them in your project.
 
-If files have been moved or renamed, make the corresponding changes in your project.
+    If files have been moved or renamed, make the corresponding changes in your project.
 
 7. **Test Thoroughly:**
-After applying the updates, run your project's tests and ensure that everything is working as expected.
+    After applying the updates, run your project's tests and ensure that everything is working as expected.
 
 ## Structure
 
