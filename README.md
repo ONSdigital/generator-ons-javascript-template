@@ -27,11 +27,9 @@ For an example built using this template, see this [demo repository]().
 
 This template includes a number of features to help you get started developing your JavaScript project quickly:
 
->[!IMPORTANT]
->To review again:
->- [ESLint](https://eslint.org/) (linting tool) to analyse code to find and fix problems. This includes identifying syntax errors, potential bugs, stylistic errors, and deviation from coding standards.
->- [Prettier](https://prettier.io/docs/en/index.html) (code formatting tool) to format your code to ensure it adheres to a consistent style.
->- Continuous Integration using [GitHub Actions](https://docs.github.com/en/actions) with jobs to lint and test your project.
+- [ESLint](https://eslint.org/) (linting tool) to analyse code to find and fix problems. This includes identifying syntax errors, potential bugs, stylistic errors, and deviation from coding standards.
+- [Prettier](https://prettier.io/docs/en/index.html) (code formatting tool) to format your code to ensure it adheres to a consistent style.
+- Continuous Integration using [GitHub Actions](https://docs.github.com/en/actions) with jobs to lint and test your project.
 - Security with:
     - GitHub [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
       Security & Version Updates
@@ -62,10 +60,8 @@ To get started:
 ##  Running Yeoman Locally
 
 #### Prerequisites:
->[!IMPORTANT]
->To review again:
->1. **Node.js version 14.x or later**: We recommend using nvm (Node Version Manager) to manage Node.js versions.
->2. **npm** (Node package manager, which comes with Node.js): Ensure npm is installed and updated
+1. **Node.js version 14.x or later**: We recommend using nvm (Node Version Manager) to manage Node.js versions.
+2. **npm** (Node package manager, which comes with Node.js): Ensure npm is installed and updated
 ```bash
 
 # Update npm to the latest version
@@ -73,7 +69,7 @@ npm install -g npm
 # Verify installation
 npm -v
 ```
->3. **Yeoman**: Install Yeoman globally using npm:
+3. **Yeoman**: Install Yeoman globally using npm:
 ```bash
 
 npm install -g yo
@@ -81,36 +77,34 @@ npm install -g yo
 # Verify installation
 yo --version
 ```
->4. **Yeoman Generator**: Install the specific Yeoman generator for your project. Yeoman requires a generator to scaffold a new project. Each generator is tailored for different frameworks, libraries, or project types.
+4. **Yeoman Generator**: Install the specific Yeoman generator for your project. Yeoman requires a generator to scaffold a new project. Each generator is tailored for different frameworks, libraries, or project types.
 ```bash
 npm install -g generator-name # Replace generator-name with the actual generator you intend to use
 
 # Verify installation
 yo generator-name --help
 ```
->5. **Operating System**: Ubuntu/MacOS.
->6. **Git**: Ensure Git is installed and configured.
->7. **GitHub CLI** (OPTIONAL): If you want to automate repository creation and configuration, including branch protection, ensure the GitHub CLI is installed and you are authenticated.
+5. **Operating System**: Ubuntu/MacOS.
+6. **Git**: Ensure Git is installed and configured.
+7. **GitHub CLI** (OPTIONAL): If you want to automate repository creation and configuration, including branch protection, ensure the GitHub CLI is installed and you are authenticated.
 
 ## Generate Project from Template
 
 Once all prerequisites are installed, you can generate your project using Yeoman. Follow these steps:
 
->[!IMPORTANT]
->To review again:
->1. **Run Yeoman**:
+1. **Run Yeoman**:
 ```bash
 yo generator-name
 ```
->2. **Answer the Prompts**: Yeoman will prompt you with a series of questions to customise the project template according to your needs. Answer these questions to tailor the project to your specifications.
->3. **Complete the Generation**: After answering all the questions, Yeoman will generate the project for you.
->4. **Navigate to your Project Directory**:
+2. **Answer the Prompts**: Yeoman will prompt you with a series of questions to customise the project template according to your needs. Answer these questions to tailor the project to your specifications.
+3. **Complete the Generation**: After answering all the questions, Yeoman will generate the project for you.
+4. **Navigate to your Project Directory**:
 ```bash
 cd your-project-directory
 ```
->5. **Start Working on your Project**: You can now start working on your newly generated JavaScript project.
+5. **Start Working on your Project**: You can now start working on your newly generated JavaScript project.
 
->By following these steps, you will set up a new JavaScript project using Yeoman locally, ensuring you have a consistent and efficient starting point for your development work.
+By following these steps, you will set up a new JavaScript project using Yeoman locally, ensuring you have a consistent and efficient starting point for your development work.
 
 #### Initialising a Git Repository and Pushing to GitHub
 
@@ -168,18 +162,17 @@ Without a **PAT** token, commits/PRs made by workflows do not trigger other work
 
 ## Design Decisions
 This JavaScript template is designed with specific tools and practices to streamline your development workflow. While this template is opinionated, there are many alternatives to the tools used here which you may prefer. See the [Alternative Software/Tools](#alternative-softwaretools) section for more information.
->[!IMPORTANT]
->To review again:
->#### 1. Why use npm?
->npm (Node Package Manager) is the default package manager for Node.js. It simplifies dependency management and allows you to easily install, update, and manage libraries required for your project. It also provides a vast registry of packages that can be readily integrated into your project.
->#### 2. Why use Yeoman?
->Yeoman is a scaffolding tool that helps kickstart new projects by providing generators for various frameworks and libraries. It allows you to quickly set up a new project with a consistent structure and best practices in place, saving time and reducing errors during the initial setup phase.
->#### 3. Why use ESLint?
->ESLint is a static code analysis tool that helps you find and fix problems in your JavaScript code. It enforces coding standards and best practices, improving code quality and maintainability. ESLint can be customised with various rules and plugins to suit your project's specifc needs.
->#### 4. Why use Prettier?
->Prettier is an opinionated code formatter that ensures your codebase remains consistently formatted. It saves time by automating the formatting process and reduces debates about code style during code reviews. Prettier integrates seamlessly with ESLint to provide a comprehensive linting and formatting solution.
->#### 5. Why use Jest?
->Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It provides a robust testing suite with a great developer experience, including features like snapshot testing, parallel test execution, and easy-to-understand error messages. Jest's zero-configuration setup makes it easy to start testing quickly.
+
+#### 1. Why use npm?
+npm (Node Package Manager) is the default package manager for Node.js. It simplifies dependency management and allows you to easily install, update, and manage libraries required for your project. It also provides a vast registry of packages that can be readily integrated into your project.
+#### 2. Why use Yeoman?
+Yeoman is a scaffolding tool that helps kickstart new projects by providing generators for various frameworks and libraries. It allows you to quickly set up a new project with a consistent structure and best practices in place, saving time and reducing errors during the initial setup phase.
+#### 3. Why use ESLint?
+ESLint is a static code analysis tool that helps you find and fix problems in your JavaScript code. It enforces coding standards and best practices, improving code quality and maintainability. ESLint can be customised with various rules and plugins to suit your project's specifc needs.
+#### 4. Why use Prettier?
+Prettier is an opinionated code formatter that ensures your codebase remains consistently formatted. It saves time by automating the formatting process and reduces debates about code style during code reviews. Prettier integrates seamlessly with ESLint to provide a comprehensive linting and formatting solution.
+#### 5. Why use Jest?
+Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It provides a robust testing suite with a great developer experience, including features like snapshot testing, parallel test execution, and easy-to-understand error messages. Jest's zero-configuration setup makes it easy to start testing quickly.
 
 ## Alternative Software/Tools
 
