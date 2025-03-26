@@ -274,29 +274,29 @@ There are several alternatives to the tools used in this template. The choice of
 >This list is not exhaustive and is meant to provide a starting point for exploring alternatives.
 
 **Package Management:**
-*[Yarn](https://yarnpkg.com/) - An alternative to npm known for its speed and dependency management.
-*[pnpm](https://pnpm.io/) - Another fast and efficient package manager that saves disk space by using a content-addressable storage model and speeds up installations.
+- [Yarn](https://yarnpkg.com/) - An alternative to npm known for its speed and dependency management.
+- [pnpm](https://pnpm.io/) - Another fast and efficient package manager that saves disk space by using a content-addressable storage model and speeds up installations.
 
 **Scaffolding/Code Generation:**
-*[Plop](https://plopjs.com/) - A lightweight alternative to Yeoman for generating files and boilerplate code.
-*[Hygen](https://www.npmjs.com/package/hygen) - A simple, fast, and scalable code generator that uses templates and command-line prompts.
+- [Plop](https://plopjs.com/) - A lightweight alternative to Yeoman for generating files and boilerplate code.
+- [Hygen](https://www.npmjs.com/package/hygen) - A simple, fast, and scalable code generator that uses templates and command-line prompts.
 
 **Linting and Formatting:**
-*[Biome](https://biomejs.dev/) - A very fast all-in-one tool that can combines linting, formatting, and type checking for JavaScript/TypeScript.
-*[Super Linter](https://github.com/super-linter/super-linter) - A GitHub Action that runs multiple linters, including ESLint, Prettier, and Stylelint.
-*[StandardJS](https://standardjs.com/) - A linter with pre-defined rules and minimal configuration.
-*[XO](https://www.npmjs.com/package/xo) - A linter with sensible defaults and a focus on simplicity.
-*[Rome](https://github.com/antfu/rome) - A tool that combines linting, formatting, and bundling.
+- [Biome](https://biomejs.dev/) - A very fast all-in-one tool that can combines linting, formatting, and type checking for JavaScript/TypeScript.
+- [Super Linter](https://github.com/super-linter/super-linter) - A GitHub Action that runs multiple linters, including ESLint, Prettier, and Stylelint.
+- [StandardJS](https://standardjs.com/) - A linter with pre-defined rules and minimal configuration.
+- [XO](https://www.npmjs.com/package/xo) - A linter with sensible defaults and a focus on simplicity.
+- [Rome](https://github.com/antfu/rome) - A tool that combines linting, formatting, and bundling.
 
 **Testing:**
-*[Mocha]()https://mochajs.org/ - A feature-rich JavaScript test framework running on Node.js and in the browser.
-*[AVA](https://www.npmjs.com/package/ava/v/2.4.0) - A minimalistic, fast JavaScript test runner with simple syntax.
-*[Cypress](https://www.cypress.io/) - A front-end testing tool built for modern web applications.
+- [Mocha]()https://mochajs.org/ - A feature-rich JavaScript test framework running on Node.js and in the browser.
+- [AVA](https://www.npmjs.com/package/ava/v/2.4.0) - A minimalistic, fast JavaScript test runner with simple syntax.
+- [Cypress](https://www.cypress.io/) - A front-end testing tool built for modern web applications.
 
 **Security:**
-*[Snyk](https://www.npmjs.com/package/snyk) - A tool for scanning for and fixing vulnerabilities in your dependencies.
-*[npm audit](https://docs.npmjs.com/cli/v10/commands/npm-audit?v=true) -A built-in npm command that can scan your dependencies for security vulnerabilities.
-*[Retire.js](https://retirejs.github.io/retire.js/) - A tool that analyses JavaScript libraries for known security vulnerabilities.
+- [Snyk](https://www.npmjs.com/package/snyk) - A tool for scanning for and fixing vulnerabilities in your dependencies.
+- [npm audit](https://docs.npmjs.com/cli/v10/commands/npm-audit?v=true) -A built-in npm command that can scan your dependencies for security vulnerabilities.
+- [Retire.js](https://retirejs.github.io/retire.js/) - A tool that analyses JavaScript libraries for known security vulnerabilities.
 
 ## Future Plans
 - Add more documentation and developer guidance.
