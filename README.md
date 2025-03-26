@@ -197,8 +197,6 @@ Start by reviewing the template's changelog or commit history to understand the 
 ## Structure 
 The structure of the template repo is as follows:
 
-**STILL DRAFT VERSION**
-
 <!-- markdownlint-disable MD013 -->
 
 ```plaintext
@@ -206,26 +204,51 @@ The structure of the template repo is as follows:
 │   └── app.js                        # Test file for the generated application.
 ├── generators/app                    # Yeoman generator logic.
 │   ├── templates                     # Contains templates files.
-│   │   ├── .github                   # Contains GitHub-specific configurations, including Actions workflows for CI/CD processes.
-│   │   │   └── TBA
+│   │   ├── .github                   # GitHub-specific configurations, including Actions workflows for CI/CD processes.
+│   │   │   ├── workflows             # CI/CD and code analysis workflows.
+│   │   │   │   ├── ci.yml            # Continuous integration workflow.
+│   │   │   │   └── codeql.yml        # CodeQL analysis workflow.
+│   │   │   └── dependabot.yml        # Dependency update configuration.
 │   │   ├── js/                       # JavaScript project template.
-│   │   │   └── TBA
+│   │   │   ├── test                  # JavaScript test files.
+│   │   │   │   └── index.tests.js    # Test file for JavaScript index.js.
+│   │   │   └── index.js              # JavaScript application entry point.
 │   │   ├── ts/                       # TypeScript project template.
+│   │   │   ├── test                  # TypeScript test files.
+│   │   │   │   └── index.tests.ts    # Test file for TypeScript index.ts.
+│   │   │   ├── index.ts              # TypeScript application entry point.
+│   │   │   └── tsconfig.json         # TypeScript compiler configuration.
+│   │   ├── .editorconfig             # Editor configuration for consistent code style.
+│   │   ├── .eslintignore             # Files to be ignore by ESLint.
+│   │   ├── .eslintrc.json            # ESLint configuration for code linting.
+│   │   ├── .gitattributes            # Git attributes file for defining attributes per path, such as line endings and merge strategies.
+│   │   ├── .nvmrc                    # Node.js version management configuration.
+│   │   ├── CODE_OF_CONDUCT.md        # Code of conduct for contributors.
+│   │   ├── CONTRIBUTING.md           # Guidelines for contributing to the project, including information on how to raise issues and submit pull requests.
+│   │   ├── LICENSE                   # Project license.
+│   │   ├── PIRR.md                   # Private Internal Reasoning Record (PIRR) for the repository, documenting the reasoning for the private/internal status of the repository. (Private/Internal Repos Only)
+│   │   ├── README.md                 # Project template README.
+│   │   ├── SECURITY.md               # Security policy.
+│   │   ├── _.gitignore               # Specifies intentionally untracked files to ignore when using Git, like build outputs and temporary files.
+│   │   ├── _.prettierrc              # Prettier configuration for code formatting.
+│   │   ├── _package.json             # Package.json template
+│   │   ├── eslint.config.mjs         # ESLint configuration.
+│   │   └── package-lock.json         # Lock file for npm package dependencies. 
 │   └── index.js                      # Entry point for the generator.
-├── .editorconfig                     # Configuration file for maintaining consistent coding styles for multiple developers working on the same project across various editors and IDEs.
-├── .eslintignore
+├── .editorconfig                     # Editor configuration for consistent code style.
+├── .eslintignore                     # Files to be ignore by ESLint.
 ├── .gitattributes                    # Git attributes file for defining attributes per path, such as line endings and merge strategies.
 ├── .gitignore                        # Specifies intentionally untracked files to ignore when using Git, like build outputs and temporary files.
-├── .nvmrc                            #
-├── .prettierrc                       # 
-├── .travis.yml
-├── CODE_OF_CONDUCT.md                # A code of conduct for the project, outlining the standards of behaviour for contributors.
+├── .nvmrc                            # Node.js version management configuration.
+├── .prettierrc                       # Prettier configuration for code formatting.
+├── .travis.yml                       # Configuration file for automated builds and tests.
+├── CODE_OF_CONDUCT.md                # Code of conduct for contributors.
 ├── CONTRIBUTING.md                   # Guidelines for contributing to the project, including information on how to raise issues and submit pull requests.
-├── LICENSE                           # The license under which the project is made available.
-├── README.md                         # The main README file providing an overview of the project, setup instructions, and other essential information.
-├── SECURITY.md                       # A security policy for the project, providing information on how to report security vulnerabilities.
-├── package-lock.json
-└──package.json
+├── LICENSE                           # Project license.
+├── README.md                         # The main README file providing an overview of the template repository, setup instructions, and other essential information.
+├── SECURITY.md                       # Security policy.
+├── package-lock.json                 # Lock file for npm package dependencies. 
+└──package.json                       # Package.json template
 ```
 
 <!-- markdownlint-enable MD013 -->
