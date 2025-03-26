@@ -309,7 +309,8 @@ There are several alternatives to the tools used in this template. The choice of
 - Integrate with the ONS Software Developer Portal.
 - Ability to update the project with the latest template changes.
 
-## Development
+## Deployment
+Deployment for this project depends on your team's practices and infrastructure. Please, refer to your team's internal documentation for the appropriate deployment steps.
 
 ## Contributing
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
