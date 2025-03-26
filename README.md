@@ -316,4 +316,4 @@ Deployment for this project depends on your team's practices and infrastructure.
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ## License
-See [LICENSE](LICENSE.md) for details.
+See [LICENSE.md](LICENSE.md) for details.
