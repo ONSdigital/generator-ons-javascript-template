@@ -231,7 +231,7 @@ The structure of the template repo is as follows:
 │   │   ├── SECURITY.md               # Security policy.
 │   │   ├── _.gitignore               # Specifies intentionally untracked files to ignore when using Git, like build outputs and temporary files.
 │   │   ├── _.prettierrc              # Prettier configuration for code formatting.
-│   │   ├── _package.json             # Package.json template
+│   │   ├── _package.json             # Package.json template.
 │   │   ├── eslint.config.mjs         # ESLint configuration.
 │   │   └── package-lock.json         # Lock file for npm package dependencies. 
 │   └── index.js                      # Entry point for the generator.
@@ -248,7 +248,7 @@ The structure of the template repo is as follows:
 ├── README.md                         # The main README file providing an overview of the template repository, setup instructions, and other essential information.
 ├── SECURITY.md                       # Security policy.
 ├── package-lock.json                 # Lock file for npm package dependencies. 
-└──package.json                       # Package.json template
+└──package.json                       # Package.json template.
 ```
 
 <!-- markdownlint-enable MD013 -->
