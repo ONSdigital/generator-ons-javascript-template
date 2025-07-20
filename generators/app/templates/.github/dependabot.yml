@@ -4,8 +4,9 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: <%= dependabotPRLimit %>
     reviewers:
-      - '@<%= name %>/maintainers'
+      - '@<%= owner %>/maintainers'
     labels:
       - 'dependencies'
+      - 'security'
