@@ -31,11 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: ESLint
-        run: npm run lint -- . --ignore-pattern 'generators/app/templates/**'
+      - name: Lint
+        run: npm run lint
 
-      - name: Prettier check
-        run: npm run prettier:check -- .
+      - name: Check formatting
+        run: npm run format:check
 
   test:
     name: Run Tests
