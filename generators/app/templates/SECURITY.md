@@ -2,7 +2,7 @@
 
 ## Scope
 
-This disclosure policy applies only to  ulnerabilities in the ONS products and services under the following conditions:
+This disclosure policy applies only to ulnerabilities in the ONS products and services under the following conditions:
 
 - ‘In scope’ vulnerabilities must be original, previously unreported, and not already discovered by internal procedures.
 - Volumetric vulnerabilities are not in scope, meaning that simply overwhelming a service with a high volume of requests is not in scope.
