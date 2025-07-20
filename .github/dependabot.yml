@@ -4,9 +4,11 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
-    open-pull-requests-limit: <%= dependabotPRLimit %>
+    open-pull-requests-limit: 5
     reviewers:
-      - '@<%= owner %>/maintainers'
+      - 'ONSDigital/maintainers'
     labels:
       - 'dependencies'
       - 'security'
+    # Auto‑merge patch and minor updates once CI passes
+    automerge: true

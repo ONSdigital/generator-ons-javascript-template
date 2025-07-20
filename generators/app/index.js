@@ -18,38 +18,26 @@ const ask = (type, name, message, options = {}) => ({
 });
 
 const validateNumber = (min, max) => (input) =>
-  input >= min && input <= max
-    ? true
-    : `Please enter a number between ${min} and ${max}`;
+  input >= min && input <= max ? true : `Please enter a number between ${min} and ${max}`;
 
 module.exports = class extends Generator {
   async prompting() {
     this.log(chalk.blue('\n🚀 ONS JavaScript Template Generator\n'));
 
     const repoAnswers = await this.prompt([
-      ask(
-        'input',
-        'name',
-        'What is your repository name? (e.g. my-awesome-project)',
-        {
-          default: this.appname.replace(/\s+/g, '-').toLowerCase(),
-          validate: (input) =>
-            /^[a-z0-9-]+$/.test(input)
-              ? true
-              : 'Repository name must be lowercase letters, numbers, and hyphens only',
-        },
-      ),
+      ask('input', 'name', 'What is your repository name? (e.g. my-awesome-project)', {
+        default: this.appname.replace(/\s+/g, '-').toLowerCase(),
+        validate: (input) =>
+          /^[a-z0-9-]+$/.test(input)
+            ? true
+            : 'Repository name must be lowercase letters, numbers, and hyphens only',
+      }),
       ask('input', 'description', 'What is your repository description?', {
         default: 'A new JavaScript project',
       }),
-      ask(
-        'input',
-        'owner',
-        'What is your repository owner? (e.g. your GitHub username)',
-        {
-          default: 'ONSDigital',
-        },
-      ),
+      ask('input', 'owner', 'What is your repository owner? (e.g. your GitHub username)', {
+        default: 'ONSDigital',
+      }),
       ask('confirm', 'isPublic', 'Is this a public repository?', {
         default: true,
       }),
@@ -86,41 +74,25 @@ module.exports = class extends Generator {
         ask('input', 'defaultBranch', 'Default branch name', {
           default: DEFAULTS.branch,
         }),
-        ask(
-          'list',
-          'repoSettings',
-          'Customize repo settings or use recommended?',
-          {
-            choices: ['recommended', 'custom'],
-            default: 'recommended',
-          },
-        ),
+        ask('list', 'repoSettings', 'Customize repo settings or use recommended?', {
+          choices: ['recommended', 'custom'],
+          default: 'recommended',
+        }),
       ]);
       Object.assign(this.answers, gitAnswers);
 
       if (this.answers.repoSettings === 'custom') {
         const custom = await this.prompt([
-          ask(
-            'confirm',
-            'dismissStaleReviews',
-            'Dismiss stale PR approvals on new commits?',
-            { default: true },
-          ),
-          ask(
-            'number',
-            'requiredReviewers',
-            'Number of approving reviews required',
-            {
-              default: DEFAULTS.requiredReviewers,
-              validate: validateNumber(0, 10),
-            },
-          ),
-          ask(
-            'confirm',
-            'requireUpToDateBranch',
-            'Require up-to-date branch before merge?',
-            { default: true },
-          ),
+          ask('confirm', 'dismissStaleReviews', 'Dismiss stale PR approvals on new commits?', {
+            default: true,
+          }),
+          ask('number', 'requiredReviewers', 'Number of approving reviews required', {
+            default: DEFAULTS.requiredReviewers,
+            validate: validateNumber(0, 10),
+          }),
+          ask('confirm', 'requireUpToDateBranch', 'Require up-to-date branch before merge?', {
+            default: true,
+          }),
           ask(
             'confirm',
             'requireConversationResolution',
@@ -167,8 +139,9 @@ module.exports = class extends Generator {
         stdio: 'inherit',
       });
     } catch (err) {
+      // Log the actual error and satisfy ESLint
       this.log(
-        chalk.yellow('⚠️ npm install failed. You can run it manually later.'),
+        chalk.yellow(`⚠️ npm install failed. You can run it manually later:\n${err.message}`),
       );
     }
   }
@@ -184,11 +157,9 @@ module.exports = class extends Generator {
     const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
     try {
-      await this.spawnCommand(
-        'git',
-        ['init', '-b', this.answers.defaultBranch],
-        { cwd: projectPath },
-      );
+      await this.spawnCommand('git', ['init', '-b', this.answers.defaultBranch], {
+        cwd: projectPath,
+      });
       await this.spawnCommand('git', ['add', '.'], { cwd: projectPath });
       await this.spawnCommand('git', ['commit', '-m', 'Initial commit'], {
         cwd: projectPath,
@@ -220,8 +191,7 @@ module.exports = class extends Generator {
           dismiss_stale_reviews: this.answers.dismissStaleReviews,
           required_approving_review_count: this.answers.requiredReviewers,
         },
-        required_conversation_resolution:
-          this.answers.requireConversationResolution,
+        required_conversation_resolution: this.answers.requireConversationResolution,
       });
 
       this.log(chalk.green(`\n✅ Git repository created and configured!`));

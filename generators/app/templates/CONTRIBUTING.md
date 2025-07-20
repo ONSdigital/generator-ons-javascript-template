@@ -12,13 +12,13 @@ This project and all its participants are governed by our [Code of Conduct](CODE
 
 Review our [Security Policy](SECURITY.md) for details on reporting security vulnerabilities.
 
-### Reporting Bugs *(CHECK THIS AGAIN)*
+### Reporting Bugs _(CHECK THIS AGAIN)_
 
 If you find a bug, first check the existing issues to see if it has already been reported. If it has not, please create a new issue with detailed information and steps to reproduce the problem.
 
 ### Suggesting Improvements
 
-We encourage suggestions for new features or improvements. Please open an issue to discuss your ideas before beginning any work on them. *(CHECK THIS AGAIN)*
+We encourage suggestions for new features or improvements. Please open an issue to discuss your ideas before beginning any work on them. _(CHECK THIS AGAIN)_
 
 ### Pull Requests
 
