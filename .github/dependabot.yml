@@ -1,14 +1,8 @@
+# .github/dependabot.yml
 version: 2
 updates:
-  - package-ecosystem: 'npm'
-    directory: '/'
+  - package-ecosystem: npm # ecosystem to update
+    directory: '/' # location of package manifests
     schedule:
-      interval: 'weekly'
-    open-pull-requests-limit: 5
-    reviewers:
-      - 'ONSDigital/maintainers'
-    labels:
-      - 'dependencies'
-      - 'security'
-    # Auto‑merge patch and minor updates once CI passes
-    automerge: true
+      interval: weekly # check for updates once a week
+    open-pull-requests-limit: 5 # maximum number of open PRs at any time
