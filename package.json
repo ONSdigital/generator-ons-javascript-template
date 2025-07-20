@@ -1,21 +1,31 @@
 {
   "name": "generator-ons-javascript-template",
   "version": "1.0.0",
-  "description": "A generic JavaScript/Node.js template generator",
-  "main": "generators/app/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "yeoman-generator"
+  "description": "Minimalistic secure JavaScript project generator",
+  "files": [
+    "generators"
   ],
-  "author": "Sanjeev & Gaia",
-  "license": "ISC",
+  "keywords": [
+    "yeoman-generator",
+    "javascript",
+    "template",
+    "ons"
+  ],
   "dependencies": {
-    "eslint": "^9.21.0",
-    "glob": "^8.0.3",
-    "prettier": "^3.5.2",
     "yeoman-generator": "^5.10.0",
-    "yo": "^5.1.0"
-  }
+    "chalk": "^4.1.2"
+  },
+  "devDependencies": {
+    "yeoman-test": "^6.3.0",
+    "yeoman-assert": "^3.1.1",
+    "jest": "^29.7.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ONSdigital/generator-ons-javascript-template.git"
+  },
+  "license": "MIT"
 }
