@@ -16,7 +16,7 @@
     "generators"
   ],
   "scripts": {
-    "lint": "eslint . --ignore-pattern 'generators/app/templates/**'",
+    "lint": "eslint .",
     "prettier:check": "prettier --check .",
     "test": "jest",
     "coverage": "jest --coverage",
@@ -39,7 +39,11 @@
     "yeoman-generator": "^7.5.1"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.31.0",
     "eslint": "^9.31.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.3",
     "jest": "^30.0.4",
     "prettier": "^3.6.2",
     "yeoman-assert": "^3.1.1",

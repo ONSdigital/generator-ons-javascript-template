@@ -167,8 +167,11 @@ module.exports = class extends Generator {
         stdio: 'inherit',
       });
     } catch (err) {
+      // Log the actual error and satisfy ESLint
       this.log(
-        chalk.yellow('⚠️ npm install failed. You can run it manually later.'),
+        chalk.yellow(
+          `⚠️ npm install failed. You can run it manually later:\n${err.message}`,
+        ),
       );
     }
   }
