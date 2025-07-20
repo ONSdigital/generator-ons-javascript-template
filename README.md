@@ -1,7 +1,7 @@
 # ONS JavaScript Template
 
-[![CI – Build Status](https://github.com/ONSDigital/js-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ONSDigital/js-template/actions/workflows/ci.yml)  
-[![CodeQL – Security Scan](https://github.com/ONSDigital/js-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/ONSDigital/js-template/actions/workflows/codeql.yml)  
+[![CI – Build Status](https://github.com/ONSDigital/generator-ons-javascript-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ONSDigital/generator-ons-javascript-template/actions/workflows/ci.yml)  
+[![CodeQL – Security Scan](https://github.com/ONSDigital/generator-ons-javascript-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/ONSDigital/generator-ons-javascript-template/actions/workflows/codeql.yml)  
 [![License – MIT](https://img.shields.io/badge/license-MIT-1ac403.svg)](LICENSE)
 
 A minimalistic Yeoman generator to scaffold new JavaScript repositories with sensible defaults and GitHub automation baked in—so you can focus on writing code, not configuration.
