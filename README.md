@@ -1,319 +1,117 @@
-# ONS-JavaScript-Template
+# ONS JavaScript Template
 
-This repository provides a foundational template for developing JavaScript projects, complete with essential tools and configurations.
+[![CI – Build Status](https://github.com/ONSDigital/js-template/actions/workflows/ci.yml/badge.svg)](https://github.com/ONSDigital/js-template/actions/workflows/ci.yml)  
+[![CodeQL – Security Scan](https://github.com/ONSDigital/js-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/ONSDigital/js-template/actions/workflows/codeql.yml)  
+[![License – MIT](https://img.shields.io/badge/license-MIT-1ac403.svg)](LICENSE)
 
-This template is designed to help you quickly start new JavaScript projects, allowing you to focus on writing code. It handles the setup of directory structures, tool configurations, and automated testing until you are ready to customise these aspects yourself.
+A minimalistic Yeoman generator to scaffold new JavaScript repositories with sensible defaults and GitHub automation baked in—so you can focus on writing code, not configuration.
 
-This template is generated using Yeoman, an open-source tool for creating projects from templates. It also supports seamless updates as the template evolves.
-
-For an example built using this template, see this [demo repository]().
+---
 
 ## Table of Contents
 
 - [Features](#features)
 - [Getting Started](#getting-started)
-  - [Using GitHub Template Feature](#using-github-template-feature)
-  - [Running Yeoman Locally](#running-yeoman-locally)
-  - [Post-clone Steps](#post-clone-steps)
-- [Updating Project with Template Changes](#updating-project-with-template-changes)
-- [Structure](#structure)
-- [Design Decisions](#design-decisions)
-- [Alternative Software/ Tools](#alternative-software-tools)
-- [Future Plans](#future-plans)
+  - [GitHub Template](#github-template)
+  - [Local Generation](#local-generation)
+- [Post‑Generation Steps](#post‑generation-steps)
+- [Repository Structure](#repository-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
+---
+
 ## Features
 
-This template includes a number of features to help you get started developing your JavaScript project quickly:
+- **Yeoman‑powered**: interactively prompt for repo name, description, owner, visibility, and Dependabot PR limit
+- **Dependabot**: weekly version updates, with customizable `open-pull-requests-limit`
+- **GitHub Actions**
+  - **CI**: runs on Node.js 20.x & 22.x (`npm ci`, `npm test`, coverage upload)
+  - **CodeQL**: automated security scanning for public repositories
+- **Lint & Format**: ESLint + Prettier preconfigured
+- **GitHub Repo Setup**: optional `git init`, initial commit, GitHub CLI repo creation, branch‑protection rules
+- **Templates**:
+  - Issue & Pull Request templates
+  - `.gitignore`, `LICENSE` (MIT), starter `README.md`
+- **Test Harness**: sample `src/index.js` + `test/index.test.js`
 
-- [ESLint](https://eslint.org/) (linting tool) to analyse code to find and fix problems. This includes identifying syntax errors, potential bugs, stylistic errors, and deviation from coding standards.
-- [Prettier](https://prettier.io/docs/en/index.html) (code formatting tool) to format your code to ensure it adheres to a consistent style.
-- Continuous Integration using [GitHub Actions](https://docs.github.com/en/actions) with jobs to lint and test your project.
-- Security with:
-    - GitHub [Dependabot](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide)
-      Security & Version Updates
-    - GitHub [CodeQL](https://codeql.github.com/) Scanning (Public Repos Only)
+---
 
 ## Getting Started
 
-You have two options for generating a project from this template:
+### GitHub Template
 
-1. **Using GitHub Template Feature**: Click [Use this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) on GitHub to create a new repository based on this template directly from the web interface. This method is quick and convenient, however it has limited customisation options compared to local generation.
-2. **Running Yeoman Locally**: Use Yeoman on your local machine to tailor the template to your specific requirements. This approach allows for greater customisation according to your project's needs and will automatically set up the repository and branch protection.
+> **Note:** If this repo is enabled as a [GitHub Template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template), you can click **Use this template** to bootstrap a new project in the browser.
 
-## Using GitHub Template Feature
+### Local Generation
 
->[!NOTE]
->DO NOT FORK this repository. Instead use the [Use this template](https://github.com/new?template_name=ons-javascript-template&template_owner=ONSdigital) feature.
-
-To get started:
-
-1. Click on [Use this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-2. Name your new repository and provide a description, then click *Create repository*. *Note: The repository name should be lowercase and use hyphens (-) instead of underscores*.
-3. GitHub will now copy the contents over, and GitHub Actions will process the template and commit to your new repository shortly after you click *Create repository*.
-4. Wait until the *Rename Project from Template* job in GitHub Actions finishes running!
-5. Once the *Rename Project from Template* action has run, you can clone your new repository and start working on your project.
-
-**Known Limitations**: Some GitHub Actions workflows may fail on the initial run post-clone because the repository will not be fully configured until the *Rename Project from Template* job has completed. This is expected behaviour and can be safely ignored. Subsequent runs will not encounter this issue.
-
-##  Running Yeoman Locally
-
-#### Prerequisites:
-1. **Node.js version 14.x or later**: We recommend using nvm (Node Version Manager) to manage Node.js versions.
-2. **npm** (Node package manager, which comes with Node.js): Ensure npm is installed and updated
-```bash
-
-# Update npm to the latest version
-npm install -g npm
-# Verify installation
-npm -v
-```
-3. **Yeoman**: Install Yeoman globally using npm:
-```bash
-
-npm install -g yo
-
-# Verify installation
-yo --version
-```
-4. **Yeoman Generator**: Install the specific Yeoman generator for your project. Yeoman requires a generator to scaffold a new project. Each generator is tailored for different frameworks, libraries, or project types.
-```bash
-npm install -g generator-name # Replace generator-name with the actual generator you intend to use
-
-# Verify installation
-yo generator-name --help
-```
-5. **Operating System**: Ubuntu/MacOS.
-6. **Git**: Ensure Git is installed and configured.
-7. **GitHub CLI** (OPTIONAL): If you want to automate repository creation and configuration, including branch protection, ensure the GitHub CLI is installed and you are authenticated.
-
-## Generate Project from Template
-
-Once all prerequisites are installed, you can generate your project using Yeoman. Follow these steps:
-
-1. **Run Yeoman**:
-```bash
-yo generator-name
-```
-2. **Answer the Prompts**: Yeoman will prompt you with a series of questions to customise the project template according to your needs. Answer these questions to tailor the project to your specifications.
-3. **Complete the Generation**: After answering all the questions, Yeoman will generate the project for you.
-4. **Navigate to your Project Directory**:
-```bash
-cd your-project-directory
-```
-5. **Start Working on your Project**: You can now start working on your newly generated JavaScript project.
-
-By following these steps, you will set up a new JavaScript project using Yeoman locally, ensuring you have a consistent and efficient starting point for your development work.
-
-#### Initialising a Git Repository and Pushing to GitHub
-
-**This step is only required if you answered `No` to the `Do you want to set up the git repository?` question.
-Otherwise, this would have been automatically done for you.**
-
-1. Go to your project directory, and initialise a git repository and make the initial commit
-
+1. **Install Yeoman & the generator**
    ```bash
-   cd /path/to/your/new/project
-   git init -b main
-   git add .
-   git commit -m "Initial commit"
+   npm install -g yo generator-ons-javascript-template
+   ```
+2. **Run the generator**
+   ```bash
+   # If you want to scaffold into the current directory:
+   yo ons-javascript-template
+   ```
+3. **Answer the prompts** (repository name, description, owner, public/private, Dependabot PR limit, git setup, branch protection…)
+4. **Jump in and code**
+   ```bash
+   npm start
+   npm test
    ```
 
-2. Create a new repo in GitHub.
-   See [GitHub How-to](<https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories>)
+---
 
-3. Push your project to the repository on GitHub:
+## Post‑Generation Steps
 
-   ```bash
-   git remote add origin https://github.com/<repository_owner>/<repository_name>.git
-   git push -u origin main
-   ```
+1. **Review branch protection**  
+   Ensure the settings (required reviews, stale‑approval dismissal, conversation resolution) match your team’s policy.
+2. **Configure commit signing**  
+   Follow [GitHub docs](https://docs.github.com/authentication/managing-commit-signature-verification).
+3. **Enable secret scanning**  
+   In your repo’s **Settings → Security → Secret scanning**.
 
-Now you can start working on your project.
+---
 
-## Post-Clone Steps
-There are a few steps to take after cloning your new repository to ensure it is fully configured and ready for use.
+## Repository Structure
 
-#### 1. Private Internal Reasoning Record (PIRR)
-
-If your repository is private/internal, you should update the `PIRR.md` file in the root of your repository with the reasoning for the private/internal status of the repository.
-
-#### 2. Repository Settings
-
-Familiarise yourself with the [ONS GitHub Policy](https://github.com/ONSdigital/ons-template/wiki#github-policy) and ensure your repository is compliant with the policy.
-Few key points to note are:
-
-- **[Branch Protection](https://github.com/ONSdigital/ons-template/wiki/5.7-Branch-Protection-rules)**: Ensure
-  the `main` or any other primary branch is protected.
-- **[Signed Commits](https://github.com/ONSdigital/ons-template/wiki/5.8-Signed-Commits)**: Use GPG keys to sign your commits.
-- **[Security Alerts](https://github.com/ONSdigital/ons-template/wiki/6.2-Security)**: Make use of Secret scanning and Push protection. Dependabot alerts will be enabled by default when using this template.
-
-If you answered `Yes` to the `Do you want to set up the git repository?` question, then these settings would have been automatically configured for you. However, it is recommended to review these settings to ensure they meet your requirements.
-
-##### Auto-fixing linting issues via GitHub Actions
-
-If you would like to auto-fix issues using MegaLinter and commit the changes back to the PR, you will need to create a **Personal Access Token** and add it as a [secret to your repository](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions).
-Without a **PAT** token, commits/PRs made by workflows do not trigger other workflows, including the MegaLinter workflow. This is a security feature of GitHub Actions to prevent infinite loops. For more info, see [MegaLinter: Auto-fixing issues](https://megalinter.io/latest/config-apply-fixes/#apply-fixes-issues).
-
-## Updating Project with Template Changes
-This template is actively maintained to incorporate the latest best practices, tooling, and configurations. As such, you may want to update your project with changes made to the template since you initially generated it.
-
-**Note:** Unlike tools like Copier, Yeoman does not have a built-in update mechanism to apply changes from a generator to an existing project. Therefore, the following steps involve a more manual process.
-
-**Recommended Update Procedure**
-1. **Review Template Changes:**
-Start by reviewing the template's changelog or commit history to understand the changes made since you generated your project. Pay close attention to:
-  - Updated dependencies (e.g., in `package.json`).
-  - Configuration file modifications (e.g., `.eslintrc.json`,`.prettierrc.json`,`.editorconfig`).
-  - Changes to GitHub Actions workflows (`.github/workflows/`).
-  - New or modified scripts in `package.json`.
-  - New files or folder structure changes.
-
-2. **Backup Your Project (Optional but Recommended):**
-    Before making any changes, create a backup of your project to prevent data loss.
-
-3. **Update Dependencies:**
-    If the template has updated dependencies, manually update your `package.json` file.
-
-    Run `npm install` or `npm ci` to install the updated dependencies.
-
-4. **Merge Configuration Changes:**
-    Carefully merge any changes to configuration files. Use `git diff` or a tool like [diffmerge](https://www.sourcegear.com/diffmerge/) to see what has changed.
-
-    If you have heavily modified configuration files, you might have to manually apply the relevant changes.
-
-5. **Update GitHub Actions Workflows:**
-    Copy and paste changes from the template's `.github/workflows/` directory into your project's workflows, being very careful to not overwrite any changes that you have made.
-
-6. **Address Structural Changes:**
-    If the template has introduced new files or folders, create them in your project.
-
-    If files have been moved or renamed, make the corresponding changes in your project.
-
-7. **Test Thoroughly:**
-    After applying the updates, run your project's tests and ensure that everything is working as expected.
-
-## Structure 
-The structure of the template repo is as follows:
-
-<!-- markdownlint-disable MD013 -->
-
-```plaintext
-├── __tests__                         # Contains test files.
-│   └── app.js                        # Test file for the generated application.
-├── generators/app                    # Yeoman generator logic.
-│   ├── templates                     # Contains templates files.
-│   │   ├── .github                   # GitHub-specific configurations, including Actions workflows for CI/CD processes.
-│   │   │   ├── workflows             # CI/CD and code analysis workflows.
-│   │   │   │   ├── ci.yml            # Continuous integration workflow.
-│   │   │   │   └── codeql.yml        # CodeQL analysis workflow.
-│   │   │   └── dependabot.yml        # Dependency update configuration.
-│   │   ├── js/                       # JavaScript project template.
-│   │   │   ├── test                  # JavaScript test files.
-│   │   │   │   └── index.tests.js    # Test file for JavaScript index.js.
-│   │   │   └── index.js              # JavaScript application entry point.
-│   │   ├── ts/                       # TypeScript project template.
-│   │   │   ├── test                  # TypeScript test files.
-│   │   │   │   └── index.tests.ts    # Test file for TypeScript index.ts.
-│   │   │   ├── index.ts              # TypeScript application entry point.
-│   │   │   └── tsconfig.json         # TypeScript compiler configuration.
-│   │   ├── .editorconfig             # Editor configuration for consistent code style.
-│   │   ├── .eslintignore             # Files to be ignore by ESLint.
-│   │   ├── .eslintrc.json            # ESLint configuration for code linting.
-│   │   ├── .gitattributes            # Git attributes file for defining attributes per path, such as line endings and merge strategies.
-│   │   ├── .nvmrc                    # Node.js version management configuration.
-│   │   ├── CODE_OF_CONDUCT.md        # Code of conduct for contributors.
-│   │   ├── CONTRIBUTING.md           # Guidelines for contributing to the project, including information on how to raise issues and submit pull requests.
-│   │   ├── LICENSE                   # Project license.
-│   │   ├── PIRR.md                   # Private Internal Reasoning Record (PIRR) for the repository, documenting the reasoning for the private/internal status of the repository. (Private/Internal Repos Only)
-│   │   ├── README.md                 # Project template README.
-│   │   ├── SECURITY.md               # Security policy.
-│   │   ├── _.gitignore               # Specifies intentionally untracked files to ignore when using Git, like build outputs and temporary files.
-│   │   ├── _.prettierrc              # Prettier configuration for code formatting.
-│   │   ├── _package.json             # Package.json template.
-│   │   ├── eslint.config.mjs         # ESLint configuration.
-│   │   └── package-lock.json         # Lock file for npm package dependencies. 
-│   └── index.js                      # Entry point for the generator.
-├── .editorconfig                     # Editor configuration for consistent code style.
-├── .eslintignore                     # Files to be ignore by ESLint.
-├── .gitattributes                    # Git attributes file for defining attributes per path, such as line endings and merge strategies.
-├── .gitignore                        # Specifies intentionally untracked files to ignore when using Git, like build outputs and temporary files.
-├── .nvmrc                            # Node.js version management configuration.
-├── .prettierrc                       # Prettier configuration for code formatting.
-├── .travis.yml                       # Configuration file for automated builds and tests.
-├── CODE_OF_CONDUCT.md                # Code of conduct for contributors.
-├── CONTRIBUTING.md                   # Guidelines for contributing to the project, including information on how to raise issues and submit pull requests.
-├── LICENSE                           # Project license.
-├── README.md                         # The main README file providing an overview of the template repository, setup instructions, and other essential information.
-├── SECURITY.md                       # Security policy.
-├── package-lock.json                 # Lock file for npm package dependencies. 
-└──package.json                       # Package.json template.
+```
+.
+├── __tests__
+│   └── app.js
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── generators
+│   └── app
+│       ├── index.js
+│       └── templates
+│           ├── CODE_OF_CONDUCT.md
+│           ├── CONTRIBUTING.md
+│           ├── LICENSE.md
+│           ├── package.json
+│           ├── PIRR.md
+│           ├── README.md
+│           ├── SECURITY.md
+│           ├── src
+│           │   └── index.js
+│           └── test
+│               └── index.test.js
+├── LICENSE.md
+├── package-lock.json
+├── package.json
+├── README.md
+└── SECURITY.md
 ```
 
-<!-- markdownlint-enable MD013 -->
-
-## Design Decisions
-This JavaScript template is designed with specific tools and practices to streamline your development workflow. While this template is opinionated, there are many alternatives to the tools used here which you may prefer. See the [Alternative Software/Tools](#alternative-softwaretools) section for more information.
-
-#### 1. Why use npm?
-npm (Node Package Manager) is the default package manager for Node.js. It simplifies dependency management and allows you to easily install, update, and manage libraries required for your project. It also provides a vast registry of packages that can be readily integrated into your project.
-#### 2. Why use Yeoman?
-Yeoman is a scaffolding tool that helps kickstart new projects by providing generators for various frameworks and libraries. It allows you to quickly set up a new project with a consistent structure and best practices in place, saving time and reducing errors during the initial setup phase.
-#### 3. Why use ESLint?
-ESLint is a static code analysis tool that helps you find and fix problems in your JavaScript code. It enforces coding standards and best practices, improving code quality and maintainability. ESLint can be customised with various rules and plugins to suit your project's specifc needs.
-#### 4. Why use Prettier?
-Prettier is an opinionated code formatter that ensures your codebase remains consistently formatted. It saves time by automating the formatting process and reduces debates about code style during code reviews. Prettier integrates seamlessly with ESLint to provide a comprehensive linting and formatting solution.
-#### 5. Why use Jest?
-Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It provides a robust testing suite with a great developer experience, including features like snapshot testing, parallel test execution, and easy-to-understand error messages. Jest's zero-configuration setup makes it easy to start testing quickly.
-
-## Alternative Software/Tools
-There are several alternatives to the tools used in this template. The choice of tools often depends on project requirements, team preferences, and existing workflows. Below are some alternatives that you may want to consider:
-
->[!NOTE]
->This list is not exhaustive and is meant to provide a starting point for exploring alternatives.
-
-**Package Management:**
-- [Yarn](https://yarnpkg.com/) - An alternative to npm known for its speed and dependency management.
-- [pnpm](https://pnpm.io/) - Another fast and efficient package manager that saves disk space by using a content-addressable storage model and speeds up installations.
-
-**Scaffolding/Code Generation:**
-- [Plop](https://plopjs.com/) - A lightweight alternative to Yeoman for generating files and boilerplate code.
-- [Hygen](https://www.npmjs.com/package/hygen) - A simple, fast, and scalable code generator that uses templates and command-line prompts.
-
-**Linting and Formatting:**
-- [Biome](https://biomejs.dev/) - A very fast all-in-one tool that can combines linting, formatting, and type checking for JavaScript/TypeScript.
-- [Super Linter](https://github.com/super-linter/super-linter) - A GitHub Action that runs multiple linters, including ESLint, Prettier, and Stylelint.
-- [StandardJS](https://standardjs.com/) - A linter with pre-defined rules and minimal configuration.
-- [XO](https://www.npmjs.com/package/xo) - A linter with sensible defaults and a focus on simplicity.
-- [Rome](https://github.com/antfu/rome) - A tool that combines linting, formatting, and bundling.
-
-**Testing:**
-- [Mocha]()https://mochajs.org/ - A feature-rich JavaScript test framework running on Node.js and in the browser.
-- [AVA](https://www.npmjs.com/package/ava/v/2.4.0) - A minimalistic, fast JavaScript test runner with simple syntax.
-- [Cypress](https://www.cypress.io/) - A front-end testing tool built for modern web applications.
-
-**Security:**
-- [Snyk](https://www.npmjs.com/package/snyk) - A tool for scanning for and fixing vulnerabilities in your dependencies.
-- [npm audit](https://docs.npmjs.com/cli/v10/commands/npm-audit?v=true) -A built-in npm command that can scan your dependencies for security vulnerabilities.
-- [Retire.js](https://retirejs.github.io/retire.js/) - A tool that analyses JavaScript libraries for known security vulnerabilities.
-
-## Future Plans
-- Add more documentation and developer guidance.
-- Add support for pre-commit hooks.
-- Further customisation options for the template:
-    - Ability to choose your own Package Manager.
-    - Ability to choose your own Linting/Formatting tools.
-    - Ability to choose your own Type Checking tools.
-    - Ability to configure the GitHub repo setting post-generation via GitHub Template feature.
-- Integrate with the ONS Software Developer Portal.
-- Ability to update the project with the latest template changes.
-
-## Deployment
-Deployment for this project depends on your team's practices and infrastructure. Please, refer to your team's internal documentation for the appropriate deployment steps.
+---
 
 ## Contributing
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+Pull requests, issues, and ⭐️ are all very welcome. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+---
 
 ## License
-See [LICENSE.md](LICENSE.md) for details.
+
+This project is licensed under the [MIT License](LICENSE).
