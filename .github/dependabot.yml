@@ -1,14 +1,36 @@
 version: 2
 updates:
-  - package-ecosystem: 'npm'
+  # 1. Security updates — daily
+  - package-ecosystem: npm
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: daily
     open-pull-requests-limit: 5
-    reviewers:
-      - 'ONSDigital/maintainers'
     labels:
-      - 'dependencies'
-      - 'security'
-    # Auto‑merge patch and minor updates once CI passes
-    automerge: true
+      - dependencies
+      - security
+    reviewers:
+      - 'ONS-Digital/maintainers'
+
+  # 2. Routine version bumps — weekly
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: sunday
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    reviewers:
+      - 'ONS-Digital/maintainers'
+
+  # 3. GitHub Actions workflow updates — monthly
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 5
+    labels:
+      - dependencies
+    reviewers:
+      - 'ONS-Digital/maintainers'
